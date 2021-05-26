@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Title of the document</title>
+<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+</head>
+
+<body style="font-family: Montserrat;">
+
+<div id="tabliczka" style="width: 500px; height: 200px; border: dotted 1px black; text-align: center; background-color:seashell; padding:10px;">
+    <h1>TABLICZKA Z IMIENIEM</h1>
+   <div style="display: inline-block; white-space: nowrap;
+   ">
+    <h3 id="name"><strong>Podaj imię:</strong>  </h3> 
+    <div>
+   <p id="price" style="max-width: 200px; padding: 15px; display: none; background-color: red; color:white; border-radius: 5px;"></p> 
+        </div>
+</div>
+    
+    <input type="text">
+    <button type="button" onClick="check()">Przelicz</button>
+    <p id="empty" style="margin: -10px; padding-bottom: 10px;"></p>
+
+</div>
+
+<script>
+
+
+function check () {
+let checkValue = document.querySelector('input').value.toUpperCase();
+if (checkValue !== "") {
+
+    document.getElementById("price").innerText = "CENA: " + checkValue.length * 4 + " PLN";
+    document.getElementById("price").style.display = "block"; 
+    document.querySelector('input').style.display = "none";
+    document.querySelector('button').style.display = "none";    
+    document.getElementById("name").innerText = '"'+ checkValue + '"';
+
+    setTimeout(function(){
+        location.reload();
+    }, 3000);
+
+};
+};
+
+
+
+
+
+
+
+
+</script> 
+
+</body>
+
+</html>
